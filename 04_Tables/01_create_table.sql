@@ -64,6 +64,17 @@ CREATE TABLE person_6(
     CHECK(age >= 18)
 );
 
+--Add default date
+CREATE TABLE person_6b (
+    id_person INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    age INT CHECK (age >= 18),
+    email VARCHAR(100),
+    created DATETIME DEFAULT '2024-07-23 16:00:00',
+    PRIMARY KEY (id_person),
+    UNIQUE (id_person)
+);
+
 /*
     Create new table named "person_7" with with the constraint "NOT NULL", "UNIQUE", "PRIMARY KEY",
     "CHECK", "DEFAULT" and "AUTO_INCREMENT"

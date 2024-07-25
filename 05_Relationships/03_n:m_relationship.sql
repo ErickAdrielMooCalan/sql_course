@@ -13,3 +13,5 @@ CREATE TABLE users_languages(
     FOREIGN KEY(fk_id_language) REFERENCES languages(id_language),
     UNIQUE(fk_id_users, fk_id_language)
 );
+
+--this is a test run

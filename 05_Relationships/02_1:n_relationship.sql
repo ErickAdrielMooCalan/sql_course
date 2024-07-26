@@ -15,7 +15,7 @@ ALTER TABLE users
 ADD CONSTRAINT fk_companies
 FOREIGN KEY(fk_id_company) REFERENCES companies(id_company);
 
---Insert data into table
+--Insert data into "companies" table
 INSERT INTO companies (name_company) VALUES ('Fill');
 INSERT INTO companies (name_company) VALUES ('Street');
 INSERT INTO companies (name_company) VALUES ('MVLC');
@@ -24,3 +24,9 @@ INSERT INTO companies (name_company) VALUES ('DataSearch');
 INSERT INTO companies (name_company) VALUES ('CardRed');
 INSERT INTO companies (name_company) VALUES ('Clean Eyes');
 INSERT INTO companies (name_company) VALUES ('Computer System Doc');
+
+--Insert data into "users" table
+UPDATE users SET fk_id_company = 1 WHERE id_users = 1;
+UPDATE users SET fk_id_company = 2 WHERE id_users = 2;
+UPDATE users SET fk_id_company = 3 WHERE id_users = 3;
+UPDATE users SET fk_id_company = 1 WHERE id_users = 7;

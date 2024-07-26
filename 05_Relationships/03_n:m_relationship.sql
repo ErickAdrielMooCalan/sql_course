@@ -14,4 +14,11 @@ CREATE TABLE users_languages(
     UNIQUE(fk_id_users, fk_id_language)
 );
 
---this is a test 5 run
+--Insert into "languages" table
+INSERT INTO languages (name_language) VALUES ('Php');
+INSERT INTO languages (name_language) VALUES ('Java');
+INSERT INTO languages (name_language) VALUES ('C++');
+INSERT INTO languages (name_language) VALUES ('C#');
+INSERT INTO languages (name_language) VALUES ('Assembler');
+INSERT INTO languages (name_language) VALUES ('Kotlin');
+INSERT INTO languages (name_language) VALUES ('Python');

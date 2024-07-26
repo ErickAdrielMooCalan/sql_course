@@ -10,3 +10,9 @@ CREATE TABLE dni(
     --Indicate that "fk_id_users" is a foreign key and comes from the "users" table
     FOREIGN KEY(fk_id_users) REFERENCES users(id_users)
 );
+
+--Insert data into table
+INSERT INTO dni (fk_id_users, dni_number) VALUES (1, 7521);
+INSERT INTO dni (fk_id_users, dni_number) VALUES (2, 7522);
+INSERT INTO dni (fk_id_users, dni_number) VALUES (3, 7523);
+INSERT INTO dni (fk_id_users, dni_number) VALUES (7, 7524);

@@ -48,8 +48,8 @@ CREATE TABLE languages(
 
 CREATE TABLE users_languages(
     id_users_language INT AUTO_INCREMENT PRIMARY KEY,
-    fk_id_users INT,
-    fk_id_language INT,
+    fk_id_users INT NOT NULL,
+    fk_id_language INT NOT NULL,
     FOREIGN KEY(fk_id_users) REFERENCES users(id_users),
     FOREIGN KEY(fk_id_language) REFERENCES languages(id_language),
     UNIQUE(fk_id_users, fk_id_language)
@@ -82,6 +82,19 @@ INSERT INTO languages (name_language) VALUES ('C#');
 INSERT INTO languages (name_language) VALUES ('Assembler');
 INSERT INTO languages (name_language) VALUES ('Kotlin');
 INSERT INTO languages (name_language) VALUES ('Python');
+
+/*
+    IMPORTANT
+    If the "NOT NULL" constraint was not previously added into "users_languages", it can be fixed
+    y modifying the 2 columns:
+
+    ALTER TABLE users_languages
+    MODIFY COLUMN fk_id_users INT NOT NULL;
+
+    ALTER TABLE users_languages
+    MODIFY COLUMN fk_id_language INT NOT NULL;
+*/
+
 
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 1);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 2);

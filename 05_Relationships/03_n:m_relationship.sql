@@ -23,3 +23,9 @@ INSERT INTO languages (name_language) VALUES ('Assembler');
 INSERT INTO languages (name_language) VALUES ('Kotlin');
 INSERT INTO languages (name_language) VALUES ('Python');
 
+--Insert into "users_language" table (relationship table)
+INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 1);
+INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 2);
+INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 3);
+INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (2, 1);
+INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (3, 1);

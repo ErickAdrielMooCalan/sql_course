@@ -22,3 +22,4 @@ INSERT INTO languages (name_language) VALUES ('C#');
 INSERT INTO languages (name_language) VALUES ('Assembler');
 INSERT INTO languages (name_language) VALUES ('Kotlin');
 INSERT INTO languages (name_language) VALUES ('Python');
+

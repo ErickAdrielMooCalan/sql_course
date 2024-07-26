@@ -14,3 +14,13 @@ ADD fk_id_company INT;
 ALTER TABLE users
 ADD CONSTRAINT fk_companies
 FOREIGN KEY(fk_id_company) REFERENCES companies(id_company);
+
+--Insert data into table
+INSERT INTO companies (name_company) VALUES ('Fill');
+INSERT INTO companies (name_company) VALUES ('Street');
+INSERT INTO companies (name_company) VALUES ('MVLC');
+INSERT INTO companies (name_company) VALUES ('Sold House');
+INSERT INTO companies (name_company) VALUES ('DataSearch');
+INSERT INTO companies (name_company) VALUES ('CardRed');
+INSERT INTO companies (name_company) VALUES ('Clean Eyes');
+INSERT INTO companies (name_company) VALUES ('Computer System Doc');

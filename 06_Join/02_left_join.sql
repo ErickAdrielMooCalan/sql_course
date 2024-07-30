@@ -29,9 +29,9 @@ ON users.id_users = dni.fk_id_users;
 --Show users who know a programming language using left join
 SELECT users.first_name, languages.name_language
 FROM users
---Which table will it join? R = users
+--Which table will it join? R = users_languages
 LEFT JOIN users_languages
 ON users.id_users = users_languages.fk_id_users
---Which table will it join? R = languages
+--Which table will it join? R = users_languages
 LEFT JOIN languages
 ON users_languages.fk_id_language = languages.id_language;

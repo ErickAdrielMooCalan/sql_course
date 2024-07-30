@@ -1,5 +1,3 @@
-/*--------------------------------- LEFT JOIN ON 1:1 RELATIONSHIP -------------------------------------*/
-
 --Show left join between "users" and "dni" tables
 SELECT * FROM users
 --Which table will it join? R = dni

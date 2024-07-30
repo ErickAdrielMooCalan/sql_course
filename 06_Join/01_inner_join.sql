@@ -43,6 +43,7 @@ ORDER BY age ASC;
 
 
 
+
 /*--------------------------------- INNER JOIN ON 1:N RELATIONSHIP -------------------------------------*/
 
 --Show users who work in a company
@@ -50,6 +51,14 @@ SELECT companies.name_company, users.first_name, users.last_name FROM companies
 --Which table will it join? R = users
 INNER JOIN users
 ON companies.id_company = users.fk_id_company;
+
+/*
+    Simple form
+
+    SELECT name_company, first_name, last_name FROM companies
+    INNER JOIN users
+    ON companies.id_company = users.fk_id_company;
+*/
 
 
 

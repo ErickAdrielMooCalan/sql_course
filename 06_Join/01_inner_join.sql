@@ -56,10 +56,22 @@ ON companies.id_company = users.fk_id_company;
 /*--------------------------------- INNER JOIN ON N:M RELATIONSHIP -------------------------------------*/
 
 --Show users who know a programming language
-SELECT users.first_name, users.last_name, languages.name_language FROM users_languages
+SELECT users.first_name, languages.name_language
+FROM users_languages
 --Which table will it join? R = users
 INNER JOIN users
-ON users_languages.id_users_language  = users.id_users
+ON users_languages.fk_id_language = users.id_users
 --Which table will it join? R = languages
 INNER JOIN languages
-ON users_languages.id_users_language = languages.id_language;
+ON users_languages.fk_id_language = languages.id_language;
+
+/*
+    Alternate form
+
+    SELECT users.first_name, languages.name_language
+    FROM users
+    INNER JOIN users_languages
+    ON users.id_users = users_languages.fk_id_users
+    INNER JOIN languages
+    ON users_languages.fk_id_language = languages.id_language;
+*/

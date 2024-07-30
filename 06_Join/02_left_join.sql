@@ -1,3 +1,14 @@
+/*
+    In some database engines the "left join", "right join" can be found as:
+
+    RIGHT OUTER JOIN
+    LEFT OUTER JOIN
+    FULL OUTER JOIN
+
+*/
+
+
+
 --Show left join between "users" and "dni" tables
 SELECT * FROM users
 --Which table will it join? R = dni

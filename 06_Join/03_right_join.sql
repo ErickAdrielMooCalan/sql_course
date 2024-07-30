@@ -1,9 +1,13 @@
 /*
-    In some database engines the "left join", "right join" can be found as:
+    In some database engines the "left join", "right join", "union" can be found as:
 
     RIGHT OUTER JOIN
     LEFT OUTER JOIN
     FULL OUTER JOIN
+
+    NOTE: In MySQL there isn't a function called "FULL JOIN", therefore, we need to use a
+    function called "UNION"
+
 
 */
 

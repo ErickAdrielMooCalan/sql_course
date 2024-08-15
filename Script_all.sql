@@ -102,6 +102,7 @@ INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 3);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (2, 1);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (3, 1);
 
+CREATE INDEX idx_first_name ON users(first_name);
 
 CREATE TABLE email_history(
 	id_history INT NOT NULL,
@@ -125,6 +126,34 @@ MODIFY COLUMN id_history INT AUTO_INCREMENT  NOT NULL;
 ALTER TABLE email_history
 RENAME COLUMN old_email TO email;
 
-UPDATE users SET email = 'carolinasanchez09@outlook.com' WHERE id_users = 10
-UPDATE users SET email = 'carolina721@gmail.com' WHERE id_users = 10
-UPDATE users SET email = 'sanchezcaronew@outlook.com' WHERE id_users = 10
+CREATE TRIGGER tg_email
+AFTER UPDATE ON users
+FOR EACH ROW
+BEGIN
+    IF OLD.email <> NEW.email THEN
+        INSERT INTO email_history(fk_id_user, email) VALUES(OLD.id_users, OLD.email);
+    END IF;
+END;
+
+UPDATE users SET email = 'carolinasanchez09@outlook.com' WHERE id_users = 10;
+UPDATE users SET email = 'carolina721@gmail.com' WHERE id_users = 10;
+UPDATE users SET email = 'sanchezcaronew@outlook.com' WHERE id_users = 10;
+
+CREATE VIEW v_adult_users AS
+SELECT first_name, age
+FROM users
+WHERE age >= 18;
+
+DELIMITER //
+CREATE PROCEDURE p_all_users()
+BEGIN
+    SELECT * FROM users;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE p_age_users(IN p_age INT)
+BEGIN
+    SELECT * FROM users WHERE age = p_age;
+END//
+DELIMITER ;

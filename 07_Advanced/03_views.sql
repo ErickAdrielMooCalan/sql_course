@@ -8,3 +8,6 @@ WHERE age >= 18;
 
 --Query the created view
 SELECT * FROM v_adult_users;
+
+--Delete a view
+DROP VIEW v_adult_users;

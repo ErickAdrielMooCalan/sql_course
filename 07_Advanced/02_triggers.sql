@@ -17,3 +17,6 @@ BEGIN
         INSERT INTO email_history(fk_id_user, email) VALUES(OLD.id_users, OLD.email);
     END IF;
 END;
+
+--Delete a TRIGGER
+DROP TRIGGER tg_email;

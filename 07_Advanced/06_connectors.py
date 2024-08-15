@@ -5,7 +5,8 @@ config = {
     "port": "3306",
     "database": "erickmoo_learn",
     "user": "root",
-    "password": "MyS3cureP@ssw0rd!"
+    "password": "MyS3cureP@ssw0rd!",
+    "charset": "utf8mb4"
 }
 
 connection = mysql.connector.connect(**config)

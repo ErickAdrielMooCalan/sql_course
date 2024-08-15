@@ -101,3 +101,27 @@ INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 2);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (1, 3);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (2, 1);
 INSERT INTO users_languages (fk_id_users, fk_id_language) VALUES (3, 1);
+
+
+CREATE TABLE email_history(
+	id_history INT NOT NULL,
+	fk_id_user INT NOT NULL,
+	old_email VARCHAR(100),
+	UNIQUE(id_history),
+	PRIMARY KEY(id_history),
+	FOREIGN KEY(fk_id_user) REFERENCES users(id_users)
+);
+
+ALTER TABLE email_history
+MODIFY COLUMN id_history INT AUTO_INCREMENT  NOT NULL;
+
+/*
+    CHANTE THE NAME OF A COLUMN IN MYSQL 5
+
+    ALTER TABLE email_history
+    CHANGE COLUMN old_email email VARCHAR(100);
+*/
+
+ALTER TABLE email_history
+RENAME COLUMN old_email TO email;
+

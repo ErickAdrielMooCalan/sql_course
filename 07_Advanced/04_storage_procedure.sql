@@ -19,11 +19,14 @@ BEGIN
 END//
 DELIMITER ;
 
+
 --Call a store procedure
 CALL p_all_users;
 
+
 --Call a storage procedure using parameters
 CALL p_age_users(20);
+
 
 --Delete a storage procedure
 DROP PROCEDURE p_all_users;

@@ -125,3 +125,6 @@ MODIFY COLUMN id_history INT AUTO_INCREMENT  NOT NULL;
 ALTER TABLE email_history
 RENAME COLUMN old_email TO email;
 
+UPDATE users SET email = 'carolinasanchez09@outlook.com' WHERE id_users = 10
+UPDATE users SET email = 'carolina721@gmail.com' WHERE id_users = 10
+UPDATE users SET email = 'sanchezcaronew@outlook.com' WHERE id_users = 10
